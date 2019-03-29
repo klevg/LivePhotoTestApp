@@ -14,27 +14,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
-    // private var request = Request()
     private var itemsForNewRequest = [Item]()
     private var items = [Item]()
     private var defaultLink = "https://wallpapers.mediacube.games/api/photos/"
     private var currentLink = ""
+    private var curentImagePathForSegue = ""
+    private var curentMoviePathForSegue = ""
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getRequest(url: defaultLink)
-
     }
     
-    @IBOutlet weak var numberOfPage: UILabel! {
-        didSet {
-            if numberOfPage.text != "1" {
-                self.backButton.titleLabel?.textColor = UIColor.white.withAlphaComponent(1)
-             }
-        }
-    }
+    @IBOutlet weak var numberOfPage: UILabel!
     
     @IBAction func nextButton(_ sender: UIButton) {
         if let nextPage = Pagination.nextLink {
@@ -55,8 +49,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    
-    
     var flowLayout: UICollectionViewFlowLayout? {
         return collectionView.collectionViewLayout as? UICollectionViewFlowLayout
     }
@@ -68,6 +60,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if let cv = collectionView?.frame {
             flowLayout?.itemSize = CGSize(width: (cv.size.width - 20 ) / 3 * scale, height: (cv.size.width - 20) / 3 * scale)
         }
+    }
+    
+    func presentAlertWithError(error: Error) {
+        let alert = UIAlertController(
+            title: "Search failed",
+            message: "\(error.localizedDescription)",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(
+            title: "OK",
+            style: .default
+        ))
+        present(alert, animated: true)
     }
     
     func getRequest(url: String) {
@@ -94,7 +99,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     Pagination.firstLink = links["first"] as? String ?? ""
                     Pagination.lastLink = links["last"] as? String ?? ""
                     Pagination.previousLink = links["prev"] as? String ?? ""
-                    print(Pagination.previousLink)
                     Pagination.nextLink = links["next"] as? String ?? ""
                 }
                 if let meta = jsonArray["meta"] as? [String: Any] {
@@ -103,40 +107,36 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     
                 }
                 
+                if Pagination.nextLink == "" {
+                    self.nextButton.isUserInteractionEnabled = false
+                    self.nextButton.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .normal)
+                } else {
+                    self.nextButton.isUserInteractionEnabled = true
+                    self.nextButton.setTitleColor(UIColor.white.withAlphaComponent(1), for: .normal)
+                }
+                
+                if Pagination.previousLink == "" {
+                    self.backButton.isEnabled = false
+                    self.backButton.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .normal)
+                } else {
+                    self.backButton.isEnabled = true
+                    self.backButton.setTitleColor(UIColor.white.withAlphaComponent(1), for: .normal)
+                }
+                self.items = self.itemsForNewRequest
+                
+                DispatchQueue.main.async {
+                    self.numberOfPage.text = String(Pagination.currentPage!)
+                    self.collectionView.reloadData()
+                }
+                
             case .failure(let error):
+                self.presentAlertWithError(error: error)
                 print(error)
             }
-            
-            if Pagination.nextLink == "" {
-                self.nextButton.isUserInteractionEnabled = false
-                self.nextButton.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .normal)
-            } else {
-                self.nextButton.isUserInteractionEnabled = true
-                self.nextButton.setTitleColor(UIColor.white.withAlphaComponent(1), for: .normal)
-            }
-            
-            if Pagination.previousLink == "" {
-                self.backButton.isEnabled = false
-                self.backButton.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .normal)
-            } else {
-                self.backButton.isEnabled = true
-                self.backButton.setTitleColor(UIColor.white.withAlphaComponent(1), for: .normal)
-            }
-            self.items = self.itemsForNewRequest
-            
-            DispatchQueue.main.async {
-                self.numberOfPage.text = String(Pagination.currentPage!)
-                self.collectionView.reloadData()
-            }
         }
-    
-//        DispatchQueue.main.async {
-//            self.collectionView.reloadData()
-//        }
-//
-    
+        
     }
-
+    
 }
 
 
@@ -145,50 +145,54 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 extension ViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let detailVC = segue.destination.contents as? DetailViewController else {return}
-//        if let cell = sender as? UICollectionViewCell, let indexPath = collectionView?.indexPath(for: cell) {
-//            detailVC.imageURL = imageURLs[indexPath.row]
-//        }
+        
+        if segue.identifier == "detailVCSegue" {
+            if let destinationVC = segue.destination as? LivePhotoViewController {
+                destinationVC.imagePathURL = curentImagePathForSegue
+                destinationVC.moviePathURL = curentMoviePathForSegue
+            }
+        }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let item = items[indexPath.item]
+        curentImagePathForSegue = item.imagePath
+        curentMoviePathForSegue = item.moviePath
+        
+        performSegue(withIdentifier: "detailVCSegue", sender: self)
+    }
 }
-
-
-
-
-
 
 
 // MARK: CollectionViewDataSource
 
 extension ViewController {
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //guard  indexPath.row < items.count else { return  nil}
         let cellIdentifier = "collectionViewCell"
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? CollectionViewCell else {
-            fatalError("The dequeued cell is not an instance of SearchResultTableViewCell.")
+            fatalError("The dequeued cell is not an instance of CollectionViewCell.")
         }
         cell.image = nil
         
         cell.spinner.startAnimating()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             let urlContents = try? Data(contentsOf: URL(string: (self?.items[indexPath.row].imagePath)!)!)
-           // print((self?.items[indexPath.item].imagePath)!)
             DispatchQueue.main.async {
                 if let imageData = urlContents {
                     if let image = UIImage(data: imageData) {
-                        //if indexPath.row < self!.items.count {
                         if cell.image == nil {
-                        cell.image = image
-                        cell.imageView.contentMode = .scaleAspectFit
-                        
-                        print("Image is load \(indexPath.row)")
+                            cell.image = image
+                            cell.imageView.contentMode = .scaleAspectFit
+                            
+                            print("Image is load \(indexPath.row)")
                         }
                     }
                     
@@ -197,9 +201,6 @@ extension ViewController {
             
         }
         return cell
-    
     }
-    
-    
     
 }

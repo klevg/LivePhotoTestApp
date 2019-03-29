@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		649758961AC985B9FFDC626C /* Pods_LivePhotoTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C210685C5605681F640FB6F7 /* Pods_LivePhotoTestApp.framework */; };
 		F3817F21224BB99900C72E93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F20224BB99900C72E93 /* AppDelegate.swift */; };
-		F3817F23224BB99900C72E93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F22224BB99900C72E93 /* ViewController.swift */; };
+		F3817F23224BB99900C72E93 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F22224BB99900C72E93 /* MainViewController.swift */; };
 		F3817F26224BB99900C72E93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3817F24224BB99900C72E93 /* Main.storyboard */; };
 		F3817F28224BB99A00C72E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3817F27224BB99A00C72E93 /* Assets.xcassets */; };
 		F3817F2B224BB99A00C72E93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3817F29224BB99A00C72E93 /* LaunchScreen.storyboard */; };
@@ -18,6 +18,7 @@
 		F3817F37224BE4B600C72E93 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F36224BE4B600C72E93 /* CollectionViewCell.swift */; };
 		F3817F39224C043400C72E93 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F38224C043400C72E93 /* Request.swift */; };
 		F3817F6C224D96FF00C72E93 /* LivePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F6B224D96FF00C72E93 /* LivePhotoViewController.swift */; };
+		F3817F70224E217900C72E93 /* LivePhotoViewControllerFromDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F6F224E217900C72E93 /* LivePhotoViewControllerFromDemo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,7 @@
 		C210685C5605681F640FB6F7 /* Pods_LivePhotoTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivePhotoTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3817F1D224BB99900C72E93 /* LivePhotoTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePhotoTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3817F20224BB99900C72E93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F3817F22224BB99900C72E93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F3817F22224BB99900C72E93 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F3817F25224BB99900C72E93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3817F27224BB99A00C72E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3817F2A224BB99A00C72E93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 		F3817F36224BE4B600C72E93 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F3817F38224C043400C72E93 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		F3817F6B224D96FF00C72E93 /* LivePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoViewController.swift; sourceTree = "<group>"; };
+		F3817F6F224E217900C72E93 /* LivePhotoViewControllerFromDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoViewControllerFromDemo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,13 +91,14 @@
 			isa = PBXGroup;
 			children = (
 				F3817F20224BB99900C72E93 /* AppDelegate.swift */,
-				F3817F22224BB99900C72E93 /* ViewController.swift */,
+				F3817F22224BB99900C72E93 /* MainViewController.swift */,
 				F3817F36224BE4B600C72E93 /* CollectionViewCell.swift */,
 				F3817F6B224D96FF00C72E93 /* LivePhotoViewController.swift */,
+				F3817F6F224E217900C72E93 /* LivePhotoViewControllerFromDemo.swift */,
 				F3817F34224BDE2A00C72E93 /* Pagination.swift */,
-				F3817F24224BB99900C72E93 /* Main.storyboard */,
 				F3817F32224BCFB200C72E93 /* Item.swift */,
 				F3817F38224C043400C72E93 /* Request.swift */,
+				F3817F24224BB99900C72E93 /* Main.storyboard */,
 				F3817F27224BB99A00C72E93 /* Assets.xcassets */,
 				F3817F29224BB99A00C72E93 /* LaunchScreen.storyboard */,
 				F3817F2C224BB99A00C72E93 /* Info.plist */,
@@ -203,7 +206,8 @@
 				F3817F37224BE4B600C72E93 /* CollectionViewCell.swift in Sources */,
 				F3817F39224C043400C72E93 /* Request.swift in Sources */,
 				F3817F6C224D96FF00C72E93 /* LivePhotoViewController.swift in Sources */,
-				F3817F23224BB99900C72E93 /* ViewController.swift in Sources */,
+				F3817F23224BB99900C72E93 /* MainViewController.swift in Sources */,
+				F3817F70224E217900C72E93 /* LivePhotoViewControllerFromDemo.swift in Sources */,
 				F3817F35224BDE2A00C72E93 /* Pagination.swift in Sources */,
 				F3817F33224BCFB200C72E93 /* Item.swift in Sources */,
 				F3817F21224BB99900C72E93 /* AppDelegate.swift in Sources */,

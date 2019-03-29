@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="980" y="26.53673163418291"/>
         </scene>
-        <!--View Controller-->
+        <!--Live Photo View Controller-->
         <scene sceneID="thE-C5-ME3">
             <objects>
-                <viewController id="C5k-Cl-V8J" sceneMemberID="viewController">
+                <viewController id="C5k-Cl-V8J" customClass="LivePhotoViewController" customModule="LivePhotoTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfu-j5-X0h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
