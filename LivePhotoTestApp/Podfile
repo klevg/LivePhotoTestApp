@@ -7,7 +7,7 @@ target 'LivePhotoTestApp' do
 
   # Pods for LivePhotoTestApp
 
-pod 'Alamofire'
-pod 'Realm'
+
+
 
 end

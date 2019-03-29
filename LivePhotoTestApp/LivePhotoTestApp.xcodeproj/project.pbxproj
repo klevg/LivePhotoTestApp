@@ -13,6 +13,11 @@
 		F3817F26224BB99900C72E93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3817F24224BB99900C72E93 /* Main.storyboard */; };
 		F3817F28224BB99A00C72E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3817F27224BB99A00C72E93 /* Assets.xcassets */; };
 		F3817F2B224BB99A00C72E93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3817F29224BB99A00C72E93 /* LaunchScreen.storyboard */; };
+		F3817F33224BCFB200C72E93 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F32224BCFB200C72E93 /* Item.swift */; };
+		F3817F35224BDE2A00C72E93 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F34224BDE2A00C72E93 /* Pagination.swift */; };
+		F3817F37224BE4B600C72E93 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F36224BE4B600C72E93 /* CollectionViewCell.swift */; };
+		F3817F39224C043400C72E93 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F38224C043400C72E93 /* Request.swift */; };
+		F3817F6C224D96FF00C72E93 /* LivePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F6B224D96FF00C72E93 /* LivePhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		F3817F27224BB99A00C72E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3817F2A224BB99A00C72E93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3817F2C224BB99A00C72E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3817F32224BCFB200C72E93 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F3817F34224BDE2A00C72E93 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		F3817F36224BE4B600C72E93 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		F3817F38224C043400C72E93 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		F3817F6B224D96FF00C72E93 /* LivePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +90,12 @@
 			children = (
 				F3817F20224BB99900C72E93 /* AppDelegate.swift */,
 				F3817F22224BB99900C72E93 /* ViewController.swift */,
+				F3817F36224BE4B600C72E93 /* CollectionViewCell.swift */,
+				F3817F6B224D96FF00C72E93 /* LivePhotoViewController.swift */,
+				F3817F34224BDE2A00C72E93 /* Pagination.swift */,
 				F3817F24224BB99900C72E93 /* Main.storyboard */,
+				F3817F32224BCFB200C72E93 /* Item.swift */,
+				F3817F38224C043400C72E93 /* Request.swift */,
 				F3817F27224BB99A00C72E93 /* Assets.xcassets */,
 				F3817F29224BB99A00C72E93 /* LaunchScreen.storyboard */,
 				F3817F2C224BB99A00C72E93 /* Info.plist */,
@@ -99,7 +114,6 @@
 				F3817F19224BB99900C72E93 /* Sources */,
 				F3817F1A224BB99900C72E93 /* Frameworks */,
 				F3817F1B224BB99900C72E93 /* Resources */,
-				9CF527C1ABF084CC28960437 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,30 +171,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9CF527C1ABF084CC28960437 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LivePhotoTestApp/Pods-LivePhotoTestApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LivePhotoTestApp/Pods-LivePhotoTestApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BC03548A31C93BA956B6B5FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,7 +200,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3817F37224BE4B600C72E93 /* CollectionViewCell.swift in Sources */,
+				F3817F39224C043400C72E93 /* Request.swift in Sources */,
+				F3817F6C224D96FF00C72E93 /* LivePhotoViewController.swift in Sources */,
 				F3817F23224BB99900C72E93 /* ViewController.swift in Sources */,
+				F3817F35224BDE2A00C72E93 /* Pagination.swift in Sources */,
+				F3817F33224BCFB200C72E93 /* Item.swift in Sources */,
 				F3817F21224BB99900C72E93 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
