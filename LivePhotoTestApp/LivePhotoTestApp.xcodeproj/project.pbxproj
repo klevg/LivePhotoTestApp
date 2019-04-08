@@ -17,8 +17,8 @@
 		F3817F35224BDE2A00C72E93 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F34224BDE2A00C72E93 /* Pagination.swift */; };
 		F3817F37224BE4B600C72E93 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F36224BE4B600C72E93 /* CollectionViewCell.swift */; };
 		F3817F39224C043400C72E93 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F38224C043400C72E93 /* Request.swift */; };
-		F3817F6C224D96FF00C72E93 /* LivePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F6B224D96FF00C72E93 /* LivePhotoViewController.swift */; };
-		F3817F70224E217900C72E93 /* LivePhotoViewControllerFromDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F6F224E217900C72E93 /* LivePhotoViewControllerFromDemo.swift */; };
+		F3817F6C224D96FF00C72E93 /* LivePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F6B224D96FF00C72E93 /* LivePhotoController.swift */; };
+		F3817F70224E217900C72E93 /* ViewLivePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3817F6F224E217900C72E93 /* ViewLivePhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +36,8 @@
 		F3817F34224BDE2A00C72E93 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		F3817F36224BE4B600C72E93 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F3817F38224C043400C72E93 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		F3817F6B224D96FF00C72E93 /* LivePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoViewController.swift; sourceTree = "<group>"; };
-		F3817F6F224E217900C72E93 /* LivePhotoViewControllerFromDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoViewControllerFromDemo.swift; sourceTree = "<group>"; };
+		F3817F6B224D96FF00C72E93 /* LivePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoController.swift; sourceTree = "<group>"; };
+		F3817F6F224E217900C72E93 /* ViewLivePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLivePhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +93,8 @@
 				F3817F20224BB99900C72E93 /* AppDelegate.swift */,
 				F3817F22224BB99900C72E93 /* MainViewController.swift */,
 				F3817F36224BE4B600C72E93 /* CollectionViewCell.swift */,
-				F3817F6B224D96FF00C72E93 /* LivePhotoViewController.swift */,
-				F3817F6F224E217900C72E93 /* LivePhotoViewControllerFromDemo.swift */,
+				F3817F6B224D96FF00C72E93 /* LivePhotoController.swift */,
+				F3817F6F224E217900C72E93 /* ViewLivePhotoController.swift */,
 				F3817F34224BDE2A00C72E93 /* Pagination.swift */,
 				F3817F32224BCFB200C72E93 /* Item.swift */,
 				F3817F38224C043400C72E93 /* Request.swift */,
@@ -205,9 +205,9 @@
 			files = (
 				F3817F37224BE4B600C72E93 /* CollectionViewCell.swift in Sources */,
 				F3817F39224C043400C72E93 /* Request.swift in Sources */,
-				F3817F6C224D96FF00C72E93 /* LivePhotoViewController.swift in Sources */,
+				F3817F6C224D96FF00C72E93 /* LivePhotoController.swift in Sources */,
 				F3817F23224BB99900C72E93 /* MainViewController.swift in Sources */,
-				F3817F70224E217900C72E93 /* LivePhotoViewControllerFromDemo.swift in Sources */,
+				F3817F70224E217900C72E93 /* ViewLivePhotoController.swift in Sources */,
 				F3817F35224BDE2A00C72E93 /* Pagination.swift in Sources */,
 				F3817F33224BCFB200C72E93 /* Item.swift in Sources */,
 				F3817F21224BB99900C72E93 /* AppDelegate.swift in Sources */,

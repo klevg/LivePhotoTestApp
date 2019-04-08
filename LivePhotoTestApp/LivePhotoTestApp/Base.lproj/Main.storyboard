@@ -133,9 +133,45 @@
                     <view key="view" contentMode="scaleToFill" id="Xfu-j5-X0h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEJ-rp-Hdl">
+                                <rect key="frame" x="132.5" y="350.5" width="110" height="30"/>
+                                <state key="normal" title="View Live Photo"/>
+                                <connections>
+                                    <action selector="viewButton:" destination="C5k-Cl-V8J" eventType="touchUpInside" id="nM3-KF-3Na"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ed4-No-kgc">
+                                <rect key="frame" x="126.5" y="246" width="122" height="30"/>
+                                <state key="normal" title="Create Live Photo"/>
+                                <connections>
+                                    <action selector="createButton:" destination="C5k-Cl-V8J" eventType="touchUpInside" id="Uh2-Fd-22Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5A-ml-0eG">
+                                <rect key="frame" x="132" y="452" width="110" height="30"/>
+                                <state key="normal" title="Save Live Photo"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="C5k-Cl-V8J" eventType="touchUpInside" id="lFa-6v-Qt1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iEJ-rp-Hdl" firstAttribute="top" secondItem="ed4-No-kgc" secondAttribute="bottom" constant="74.5" id="1c7-be-9Vq"/>
+                            <constraint firstItem="W5A-ml-0eG" firstAttribute="top" secondItem="iEJ-rp-Hdl" secondAttribute="bottom" constant="71.5" id="Pc6-Jk-7gB"/>
+                            <constraint firstItem="W5A-ml-0eG" firstAttribute="centerX" secondItem="Uft-E6-2jN" secondAttribute="centerX" id="cb5-Y5-vg8"/>
+                            <constraint firstItem="iEJ-rp-Hdl" firstAttribute="centerX" secondItem="Uft-E6-2jN" secondAttribute="centerX" id="hiR-PO-tvP"/>
+                            <constraint firstItem="ed4-No-kgc" firstAttribute="centerX" secondItem="Uft-E6-2jN" secondAttribute="centerX" id="qJt-vj-eD4"/>
+                            <constraint firstItem="iEJ-rp-Hdl" firstAttribute="centerY" secondItem="Uft-E6-2jN" secondAttribute="centerY" id="rma-Td-RET"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Uft-E6-2jN"/>
                     </view>
+                    <connections>
+                        <outlet property="createButton" destination="ed4-No-kgc" id="3Do-OT-wgt"/>
+                        <outlet property="saveButton" destination="W5A-ml-0eG" id="2s8-jJ-Sq0"/>
+                        <outlet property="viewButton" destination="iEJ-rp-Hdl" id="efZ-5Z-OYV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEr-6p-p3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
